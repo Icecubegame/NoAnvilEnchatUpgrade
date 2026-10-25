@@ -19,9 +19,18 @@ public class AnvilMenuMixin {
     )
     private int removeEnchantUpgrading(int j2, @Local(name = "i2") LocalIntRef i2) {
         if (j2 == i2.get()) {
-            i2.set(0);
+            i2.set(-1);
         }
 
         return j2;
+    }
+
+    @ModifyVariable(
+            method = "createResult",
+            name = "flag1",
+            at = @At(value = "STORE", ordinal = 0)
+    )
+    private boolean cancelEnchantUpgrading(boolean flag1, @Local(name = "i2") int i2) {
+        return flag1 && i2 > -1;
     }
 }
