@@ -33,4 +33,13 @@ public class AnvilMenuMixin {
     private boolean cancelEnchantUpgrading(boolean flag1, @Local(name = "i2") int i2) {
         return flag1 && i2 > -1;
     }
+
+    @ModifyVariable(
+            method = "createResult",
+            name = "flag1",
+            at = @At(value = "STORE", ordinal = 1)
+    )
+    private boolean cancelEnchantUpgradingForCreative(boolean flag1, @Local(name = "i2") int i2) {
+        return i2 > -1;
+    }
 }
