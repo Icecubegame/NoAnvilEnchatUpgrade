@@ -10,7 +10,7 @@ displayName="${mod_name}"
 authors="Icecubegame"
 
 description='''
-A Neoforge Minecraft 1.21.1 mod to remove the functionality of upgrading enchantments on an anvil.
+A Neoforge Minecraft 1.21.1 mod to remove the functionality of upgrading enchantments on anvils.
 '''
 
 [[mixins]]
